@@ -1,12 +1,12 @@
 http:
     routers:
         allbackendRouter:
-            rule: "Host(`192.168.0.14`)"
+            rule: "Host(`localhost`)"
             service: allbackend
     services:
         allbackend:
             loadBalancer:
                 servers:
-                  - url: "http://192.168.0.14:9991/"
-                  - url: "http://192.168.0.14:9992/"
-                  - url: "http://192.168.0.14:9993/"
+                  - url: "http://localhost:9991/"
+                  - url: "http://localhost:9992/"
+                  - url: "http://localhost:9993/"
