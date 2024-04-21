@@ -1,0 +1,27 @@
+http:
+    routers:
+        default:
+            rule: "Host(`localhost`)"
+            service: weighted_round_robin
+    services:
+        weighted_round_robin:
+          weighted:
+            services:
+              - name: defaultservice
+                weight: 1
+              - name: app1service
+                weight: 6
+              - name: app2service
+                weight: 3
+        defaultservice:
+            loadBalancer:
+                servers:
+                  - url: "http://localhost:9991/"
+        app1service:
+            loadBalancer:
+                servers:
+                  - url: "http://localhost:9992/"
+        app2service:
+            loadBalancer:
+                servers:
+                  - url: "http://localhost:9993/"

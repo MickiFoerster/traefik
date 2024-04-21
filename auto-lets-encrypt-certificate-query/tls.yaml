@@ -1,0 +1,23 @@
+http:
+    routers:
+        unsecureRouter:
+            rule: "Host(`talkmaster.com-science.de`)"
+            service: allbackend
+        allbackendRouter:
+            rule: "Host(`talkmaster.com-science.de`)"
+            service: allbackend
+            tls:
+              certResolver: myresolver
+              options: tlsoptions
+    services:
+        allbackend:
+            loadBalancer:
+                servers:
+                  - url: "http://localhost:9991/"
+                  - url: "http://localhost:9992/"
+                  - url: "http://localhost:9993/"
+
+tls:
+  options:
+    tlsoptions:
+      minVersion: VersionTLS12

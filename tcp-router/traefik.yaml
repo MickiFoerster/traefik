@@ -1,0 +1,8 @@
+entrypoints:
+    unsecure:
+        address: :1111
+
+providers:
+    file:
+        filename: tcp-router.yaml
+        watch: true

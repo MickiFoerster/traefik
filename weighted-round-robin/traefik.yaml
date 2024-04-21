@@ -1,0 +1,8 @@
+entrypoints:
+    unsecure:
+        address: :1111
+
+providers:
+    file:
+        filename: weighted_round_robin.yaml
+        watch: true

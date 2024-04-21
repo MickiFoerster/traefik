@@ -1,0 +1,18 @@
+entrypoints:
+    unsecure:
+        address: :1111
+    secure:
+      address: :443
+
+certificateResolves:
+  myresolver:
+    acme:
+      email: asdf@asdf.com
+      storage: acme.json
+      httpChallenge:
+        entryPoint: unsecure
+
+providers:
+    file:
+        filename: tls.yaml
+        watch: true
