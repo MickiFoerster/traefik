@@ -4,5 +4,8 @@ entrypoints:
 
 providers:
     file:
-        filename: all.yaml
+        filename: /etc/traefik/all.yaml
         watch: true
+
+accessLog: {}
+    
