@@ -4,5 +4,8 @@ entrypoints:
 
 providers:
     file:
-        filename: tcp-router.yaml
+        filename: /etc/traefik/tcp-router.yaml
         watch: true
+
+accessLog: {}
+    
