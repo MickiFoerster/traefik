@@ -3,10 +3,17 @@ http:
         allbackendRouter:
             rule: "Host(`localhost`)"
             service: allbackend
+            middlewares:
+              - addCustomHeader
+
     services:
         allbackend:
             loadBalancer:
                 servers:
-                  - url: "http://localhost:9991/"
-                  - url: "http://localhost:9992/"
-                  - url: "http://localhost:9993/"
+                  - url: "https://www.micki-foerster.de"
+
+    middlewares:
+      addCustomHeader:
+        headers:
+          customRequestHeaders: 
+            Host: micki-foerster.de

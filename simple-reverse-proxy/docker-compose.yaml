@@ -1,9 +1,5 @@
 version: '3'
 
-networks:
-  ntwkr_docker:
-    external: true
-
 services:
   traefik:
     image: traefik:v2.11
