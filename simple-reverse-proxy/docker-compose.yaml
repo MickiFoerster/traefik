@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  traefik:
+    image: traefik:v2.11
+    restart: unless-stopped
+    ports:
+      - 80:80
+    volumes:
+      - ./traefik.yaml:/etc/traefik/traefik.yaml:ro
+      - ./all.yaml:/etc/traefik/all.yaml:ro

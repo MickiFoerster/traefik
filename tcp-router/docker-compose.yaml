@@ -1,0 +1,16 @@
+version: '3'
+
+networks:
+  ntwkr_docker:
+    external: true
+
+services:
+  traefik:
+    image: traefik:v2.11
+    restart: unless-stopped
+    ports:
+      - 1111:1111
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik.yaml:/etc/traefik/traefik.yaml:ro
+      - ./tcp-router.yaml:/etc/traefik/tcp-router.yaml:ro

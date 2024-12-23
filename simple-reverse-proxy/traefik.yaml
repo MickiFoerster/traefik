@@ -1,8 +1,11 @@
 entrypoints:
-    unsecure:
-        address: :1111
+    web:
+        address: :80
 
 providers:
     file:
-        filename: all.yaml
+        filename: /etc/traefik/all.yaml
         watch: true
+
+accessLog: {}
+    
