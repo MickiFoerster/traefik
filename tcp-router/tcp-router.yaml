@@ -1,0 +1,15 @@
+tcp:
+    routers:
+        default:
+            rule: "HostSNI(`*`)"
+            service: defaultservice
+    services:
+        defaultservice:
+            loadBalancer:
+                servers:
+                  - address: "localhost:9991"
+                  - address: "localhost:9992"
+                  - address: "localhost:9993"
+                  - address: "localhost:9994"
+                  - address: "localhost:9995"
+                  - address: "localhost:9996"
